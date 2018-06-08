@@ -5,23 +5,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
 
-public class BSTNodeTest
+public class BinarySearchTreeTest
 {
     @Test
     public void testNodeInstantiation()
     {
         String derp = "derp";
-        BSTNode<String> node = new BSTNode<>(derp);
+        BinarySearchTree<String> node = new BinarySearchTree<>(derp);
         Assertions.assertEquals(derp, node.value);
-        Assertions.assertEquals(BSTNode.NULL, node.left);
-        Assertions.assertEquals(BSTNode.NULL, node.right);
+        Assertions.assertEquals(BinarySearchTree.NULL, node.left);
+        Assertions.assertEquals(BinarySearchTree.NULL, node.right);
         Assertions.assertEquals(1, node.getHeight());
     }
 
     @Test
     public void testBalancedInsertion()
     {
-        BSTNode<Integer> root = new BSTNode<>(0);
+        BinarySearchTree<Integer> root = new BinarySearchTree<>(0);
 
         Assertions.assertEquals(1, root.getSize());
         Assertions.assertEquals(1, root.getHeight());
@@ -100,7 +100,7 @@ public class BSTNodeTest
     @Test
     public void testImbalancedInsertion()
     {
-        BSTNode<Integer> root = new BSTNode<>(0);
+        BinarySearchTree<Integer> root = new BinarySearchTree<>(0);
 
         Assertions.assertEquals(1, root.getSize());
         Assertions.assertEquals(1, root.getHeight());
@@ -111,7 +111,7 @@ public class BSTNodeTest
         Assertions.assertEquals(2, root.getSize());
         Assertions.assertEquals(2, root.getHeight());
         Assertions.assertTrue(-1 == root.left.value);
-        Assertions.assertEquals(BSTNode.NULL, root.right);
+        Assertions.assertEquals(BinarySearchTree.NULL, root.right);
 
         root.insert(-2);
         root.insert(-3);
@@ -119,13 +119,13 @@ public class BSTNodeTest
 
         Assertions.assertEquals(5, root.getSize());
         Assertions.assertEquals(5, root.getHeight());
-        Assertions.assertEquals(BSTNode.NULL, root.right);
+        Assertions.assertEquals(BinarySearchTree.NULL, root.right);
     }
 
     @Test
     public void testPreOrderIterator()
     {
-        BSTNode<Integer> root = new BSTNode<>(0);
+        BinarySearchTree<Integer> root = new BinarySearchTree<>(0);
 
         Iterator<Integer> iterator = root.preOrderIterator();
 
@@ -171,7 +171,7 @@ public class BSTNodeTest
         Assertions.assertFalse(iterator.hasNext());
         Assertions.assertNull(iterator.next());
 
-        iterator = BSTNode.NULL.preOrderIterator();
+        iterator = BinarySearchTree.NULL.preOrderIterator();
 
         Assertions.assertFalse(iterator.hasNext());
         Assertions.assertNull(iterator.next());
@@ -180,7 +180,7 @@ public class BSTNodeTest
     @Test
     public void testInOrderIterator()
     {
-        BSTNode<Integer> root = new BSTNode<>(0);
+        BinarySearchTree<Integer> root = new BinarySearchTree<>(0);
 
         Iterator<Integer> iterator = root.inOrderIterator();
 
@@ -225,7 +225,7 @@ public class BSTNodeTest
         Assertions.assertFalse(iterator.hasNext());
         Assertions.assertNull(iterator.next());
 
-        iterator = BSTNode.NULL.inOrderIterator();
+        iterator = BinarySearchTree.NULL.inOrderIterator();
 
         Assertions.assertFalse(iterator.hasNext());
         Assertions.assertNull(iterator.next());
@@ -234,7 +234,7 @@ public class BSTNodeTest
     @Test
     public void testPostOrderIterator()
     {
-        BSTNode<Integer> root = new BSTNode<>(0);
+        BinarySearchTree<Integer> root = new BinarySearchTree<>(0);
 
         Iterator<Integer> iterator = root.postOrderIterator();
 
@@ -281,7 +281,7 @@ public class BSTNodeTest
         Assertions.assertFalse(iterator.hasNext());
         Assertions.assertNull(iterator.next());
 
-        iterator = BSTNode.NULL.postOrderIterator();
+        iterator = BinarySearchTree.NULL.postOrderIterator();
 
         Assertions.assertFalse(iterator.hasNext());
         Assertions.assertNull(iterator.next());

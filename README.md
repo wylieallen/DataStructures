@@ -21,7 +21,7 @@ SegmentedStack: A composite stack of stacks. Based on another CTCI exercise.
 
 ## Trees
 
-BSTNode: A binary search tree implementation with preorder, inorder and postorder iterators.
+BinarySearchTree: A binary search tree implementation with preorder, inorder and postorder iterators.
 
 ## Todo
 

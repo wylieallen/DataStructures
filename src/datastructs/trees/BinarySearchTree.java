@@ -2,13 +2,13 @@ package datastructs.trees;
 
 import java.util.Iterator;
 
-public class BSTNode<T extends Comparable<T>>
+public class BinarySearchTree<T extends Comparable<T>>
 {
     public final T value;
-    public BSTNode<T> left, right;
+    public BinarySearchTree<T> left, right;
     private int size, height;
 
-    public BSTNode(T value)
+    public BinarySearchTree(T value)
     {
         this.value = value;
         left = right = NULL;
@@ -42,7 +42,7 @@ public class BSTNode<T extends Comparable<T>>
         {
             if (left == NULL)
             {
-                left = new BSTNode<>(value);
+                left = new BinarySearchTree<>(value);
                 size++;
                 height = recalculateHeight();
                 return true;
@@ -65,7 +65,7 @@ public class BSTNode<T extends Comparable<T>>
         {
             if (right == NULL)
             {
-                right = new BSTNode<>(value);
+                right = new BinarySearchTree<>(value);
                 size++;
                 height = recalculateHeight();
                 return true;
@@ -160,7 +160,6 @@ public class BSTNode<T extends Comparable<T>>
         {
             private boolean leftTraversed, centerTraversed, rightTraversed;
             private Iterator<T> leftIterator, rightIterator;
-
             {
                 if (left == NULL)
                 {
@@ -293,7 +292,7 @@ public class BSTNode<T extends Comparable<T>>
         return size;
     }
 
-    public static final BSTNode NULL = new BSTNode<>(null);
+    public static final BinarySearchTree NULL = new BinarySearchTree<>(null);
     static
     {
         NULL.left = NULL.right = NULL;
