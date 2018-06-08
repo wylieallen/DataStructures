@@ -31,7 +31,7 @@ public class StacksQueue<T> implements Queue<T>
         }
     }
 
-    public T pop()
+    public T pop() throws UnsupportedOperationException
     {
         return forward.pop();
     }

@@ -20,7 +20,7 @@ public abstract class AbstractStackTest
     @Test
     public void testPeek()
     {
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> stack.peek());
+        Assertions.assertNull(stack.peek());
         Assertions.assertEquals(0, stack.getSize());
 
         stack.push("Herp");

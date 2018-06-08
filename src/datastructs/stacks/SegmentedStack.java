@@ -20,7 +20,7 @@ public class SegmentedStack<T> implements Stack<T>
         return stacks.peek().peek();
     }
 
-    public T pop()
+    public T pop() throws UnsupportedOperationException
     {
         T value = stacks.peek().pop();
         if(stacks.getSize() > 1 && stacks.peek().getSize() == 0)

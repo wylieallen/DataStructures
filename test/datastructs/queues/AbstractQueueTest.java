@@ -19,7 +19,7 @@ public abstract class AbstractQueueTest
     @Test
     public void testPeek()
     {
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> queue.peek());
+        Assertions.assertNull(queue.peek());
         Assertions.assertEquals(0, queue.getSize());
 
         queue.push("Herp");

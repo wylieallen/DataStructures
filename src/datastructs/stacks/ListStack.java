@@ -16,13 +16,8 @@ public class ListStack<T> implements Stack<T>
         list.prepend(value);
     }
 
-    public T peek() throws UnsupportedOperationException
+    public T peek()
     {
-        if(getSize() <= 0)
-        {
-            throw new UnsupportedOperationException();
-        }
-
         return list.getHead();
     }
 

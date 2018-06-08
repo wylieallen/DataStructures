@@ -13,18 +13,21 @@ public class ListQueue<T> implements Queue<T>
 
     public int getSize() { return list.getSize(); }
 
-    public T peek() throws UnsupportedOperationException
+    public T peek()
     {
-        if(getSize() <= 0) throw new UnsupportedOperationException();
-
         return list.getHead();
     }
 
     public T pop() throws UnsupportedOperationException
     {
-        if(getSize() <= 0) throw new UnsupportedOperationException();
-
-        return list.remove(0);
+        try
+        {
+            return list.remove(0);
+        }
+        catch(IndexOutOfBoundsException e)
+        {
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void push(T value)
